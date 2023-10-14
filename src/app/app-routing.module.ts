@@ -10,7 +10,7 @@ import { StudentDashComponent } from './student-dash/student-dash.component';
 
 
 const routes: Routes = [
-  {path:"login",component:LoginComponent},
+  {path:"",component:LoginComponent},
   {path:"admin-dash",component:AdminDashComponent},
   {path:"student-dash",component:StudentDashComponent}
   

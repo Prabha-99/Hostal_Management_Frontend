@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { StudentDashComponent } from './student-dash/student-dash.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { StudentDashComponent } from './student-dash/student-dash.component';
   ],
   imports: [
     FormsModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],
