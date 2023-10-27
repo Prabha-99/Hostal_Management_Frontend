@@ -8,7 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { StudentDashComponent } from './student-dash/student-dash.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavBarComponent } from './nav-bar/nav-bar.component'; 
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { AdminSideComponent } from './admin-side/admin-side.component'; 
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     LoginComponent,
     AdminDashComponent,
     StudentDashComponent,
-    NavBarComponent
+    NavBarComponent,
+    AdminSideComponent
   ],
   imports: [
     FormsModule,
