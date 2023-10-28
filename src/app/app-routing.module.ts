@@ -11,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AdminSideComponent } from './admin-side/admin-side.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
+import { ChangRoomComponent } from './chang-room/chang-room.component';
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:"nav-bar",component:NavBarComponent},
   {path:"admin-side",component:AdminSideComponent},
   {path:"registration",component:RegistrationComponent},
-  {path:"staff-registration",component:StaffRegistrationComponent}
+  {path:"staff-registration",component:StaffRegistrationComponent},
+  {path:"change-room",component:ChangRoomComponent}
   
 ];
 

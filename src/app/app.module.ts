@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AdminSideComponent } from './admin-side/admin-side.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { StaffRegistrationComponent } from './staff-registration/staff-registration.component'; 
+import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
+import { ChangRoomComponent } from './chang-room/chang-room.component'; 
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StaffRegistrationComponent } from './staff-registration/staff-registrat
     NavBarComponent,
     AdminSideComponent,
     RegistrationComponent,
-    StaffRegistrationComponent
+    StaffRegistrationComponent,
+    ChangRoomComponent
   ],
   imports: [
     FormsModule,
