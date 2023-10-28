@@ -10,6 +10,7 @@ import { StudentDashComponent } from './student-dash/student-dash.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AdminSideComponent } from './admin-side/admin-side.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:"student-dash",component:StudentDashComponent},
   {path:"nav-bar",component:NavBarComponent},
   {path:"admin-side",component:AdminSideComponent},
-  {path:"registration",component:RegistrationComponent}
+  {path:"registration",component:RegistrationComponent},
+  {path:"staff-registration",component:StaffRegistrationComponent}
   
 ];
 

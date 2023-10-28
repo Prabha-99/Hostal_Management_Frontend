@@ -10,7 +10,8 @@ import { StudentDashComponent } from './student-dash/student-dash.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AdminSideComponent } from './admin-side/admin-side.component';
-import { RegistrationComponent } from './registration/registration.component'; 
+import { RegistrationComponent } from './registration/registration.component';
+import { StaffRegistrationComponent } from './staff-registration/staff-registration.component'; 
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegistrationComponent } from './registration/registration.component';
     StudentDashComponent,
     NavBarComponent,
     AdminSideComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    StaffRegistrationComponent
   ],
   imports: [
     FormsModule,
