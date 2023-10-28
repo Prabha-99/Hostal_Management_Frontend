@@ -34,7 +34,7 @@ export class RegistrationComponent {
               if (error.status === 409) {
                 alert('Email is Already Registered! Please Check Your Email!');
               } else {
-                alert(`An error occurred: ${error.message || 'Unknown error'}`);
+                alert('Room is already full. Please choose another room.');
               }
             }
           );
