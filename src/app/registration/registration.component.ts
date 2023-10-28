@@ -11,7 +11,7 @@ export class RegistrationComponent {
   regData = {
     firstname: '',
     lastname: '',
-    staff_id: '',
+    reg_no: '',
     email: '',
     password: '',
     room: '',
@@ -44,7 +44,7 @@ export class RegistrationComponent {
       this.regData = {
         firstname: '',
         lastname: '',
-        staff_id: '',
+        reg_no: '',
         email: '',
         password: '',
         room: '',
@@ -56,7 +56,7 @@ export class RegistrationComponent {
       if (
         this.regData.firstname.trim() === '' ||
         this.regData.lastname.trim() === '' ||
-        this.regData.staff_id.trim() === '' ||
+        this.regData.reg_no.trim() === '' ||
         this.regData.email.trim() === '' ||
         this.regData.password.trim() === '' ||
         this.regData.room.trim() === '' ||
