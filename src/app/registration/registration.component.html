@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title> 
+</head>
+<body>
+    <app-nav-bar></app-nav-bar>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <app-admin-side></app-admin-side>
+            </div>
+            <div class="col-10">
+                <br><br><br><br>
+
+                <form (submit)="register()">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-lg-8">
+            
+                            <h1>Registration</h1>
+                                <div class="mb-3">
+                                    <label for="exampleInputFristName1" class="form-label">First Name</label>
+                                    <input type="email" class="form-control short-input" [(ngModel)]="regData.firstname"  name="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputLastName1" class="form-label">Last Name</label>
+                                    <input type="email" class="form-control short-input" [(ngModel)]="regData.lastname"  name="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputStaff_id1" class="form-label">Staff Id</label>
+                                    <input type="staff_id" class="form-control short-input" [(ngModel)]="regData.reg_no"  name="staff_id" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                                    <input type="email" class="form-control short-input" [(ngModel)]="regData.email"  name="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control short-input" [(ngModel)]="regData.password"  name="password" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputRoom1" class="form-label">Room Number</label>
+                                    <input type="room" class="form-control short-input" [(ngModel)]="regData.room"  name="room" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sel1">Role (select one):</label>
+                                    <select class="form-control" id="sel1" name ="role" [(ngModel)] = "regData.role">
+                                    <option>ADMIN</option>
+                                    <option>DEAN</option>
+                                    <option>SUB_WARDEN</option>
+                                    <option>ACADEMIC_WARDEN</option>
+                                    <option>STUDENT</option>
+                                    </select>
+                                </div>
+                                
+                                <br><br>
+
+                                <div style=" padding:10px;" class = "d-flex justify-content-around">
+                                    <button type="submit" class="btn btn-primary margin-right:10px " >Register</button>
+                                    <button type="button" class="btn btn-primary" (click)="clear()">Clear</button>
+                                </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
