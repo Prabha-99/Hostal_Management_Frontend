@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --offcanvas-width: 220px;   /*Width of the Side Bar*/
+    --TopNavbarHeight: 72px;    /*Height of the Navbar Bar*/
+}
+
+.sidebar-nav{
+    width: var(--offcanvas-width);
+
+}
+
+@media(min-width: 150px){
+    .sidebar-nav{
+        transform: none;
+        position: fixed;
+        visibility: visible !important;
+        top: var(--TopNavbarHeight);
+        height: calc(100% - var(--TopNavbarHeight));
+    }
+}
+
