@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RegistrationService } from '../Service/registration.service';
-import { ro } from 'date-fns/locale';
 
 @Component({
   selector: 'app-staff-registration',
