@@ -11,6 +11,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AdminSideComponent } from './admin-side/admin-side.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
+import { QRCodeComponent } from './qrcode/qrcode.component';
+import { NavComponent } from './nav/nav.component';
+import { ComplainComponent } from './complain/complain.component';
 
 
 
@@ -21,7 +24,10 @@ const routes: Routes = [
   {path:"nav-bar",component:NavBarComponent},
   {path:"admin-side",component:AdminSideComponent},
   {path:"registration",component:RegistrationComponent},
-  {path:"staff-registration",component:StaffRegistrationComponent}
+  {path:"staff-registration",component:StaffRegistrationComponent},
+  {path:"qrcode",component:QRCodeComponent},
+  {path:"nav",component:NavComponent},
+  {path:"complain",component:ComplainComponent}
   
 ];
 
