@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-header">
+                    <h2><b>SUBMIT YOUR COMPLAINT</b></h2>
+                </div><br>
+
+                <form class="was-validated" (ngSubmit)="onSubmit()" #complainForm="ngForm">
+
+                    <div class="mb-3">
+                        <label for="validationTextarea" class="form-label"><b>Attach the scanned Property QR here: </b></label>
+                        <input type="file" class="form-control" id="fileInput" aria-label="file example" required (change)="onFileSelected($event)">
+                    </div>
+
+                    <label for="validationTextarea" class="form-label"><b>Select the Complaint Type: </b></label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="validationFormCheck2" name="complainType" value="Broken Property" required [(ngModel)]="complainData.cType" ngModel name="cType">
+                        <label class="form-check-label" for="validationFormCheck2">Broken Property</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="radio" class="form-check-input" id="validationFormCheck3" name="complainType" value="Damaged Property" required [(ngModel)]="complainData.cType" ngModel name="cType">
+                        <label class="form-check-label" for="validationFormCheck3">Damaged Property</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="validationTextarea" class="form-label"><b>Select the Room No: </b></label>
+                        <select class="form-select" required aria-label="select example" id="roomSelect" [(ngModel)]="complainData.room" ngModel name="room">
+                            <option value="" disabled>Choose one</option>
+                            <option value="402">402</option>
+                            <option value="403">403</option>
+                            <!-- Add more options here -->
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="validationTextarea" class="form-label"><b>Complaint Description: </b></label>
+                        <textarea class="form-control" id="validationTextarea" placeholder="Describe your complaint here" required [(ngModel)]="complainData.description" ngModel name="description"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit">Submit the Complaint</button>
+                    </div>
+                </form>
+                <div class="alert alert-success" *ngIf="showMessage">{{successMessage}}</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
