@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR</title>
+</head>
+<body>
+
+    <div>
+        <input type="file" (change)="onFileChange($event)" accept=".png, .jpg, .jpeg">
+        <button (click)="uploadImage()">Upload Image</button>
+    </div>
+      
+    <div *ngIf="qrCodeInfo">
+        <p>ID: {{ qrCodeInfo.id }}</p>
+        <p>Name: {{ qrCodeInfo.name }}</p>
+    </div>
+      
+    
+</body>
+</html>

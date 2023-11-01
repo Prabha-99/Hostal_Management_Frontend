@@ -1,7 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -11,7 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AdminSideComponent } from './admin-side/admin-side.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { StaffRegistrationComponent } from './staff-registration/staff-registration.component'; 
+import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
+import { QRCodeComponent } from './qrcode/qrcode.component';
+import { NavComponent } from './nav/nav.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ComplainComponent } from './complain/complain.component'; 
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
 
 @NgModule({
   declarations: [
@@ -22,13 +26,17 @@ import { StaffRegistrationComponent } from './staff-registration/staff-registrat
     NavBarComponent,
     AdminSideComponent,
     RegistrationComponent,
-    StaffRegistrationComponent
+    StaffRegistrationComponent,
+    QRCodeComponent,
+    NavComponent,
+    ComplainComponent
   ],
   imports: [
     FormsModule,
     HttpClientModule,
-    BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
