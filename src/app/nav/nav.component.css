@@ -1,0 +1,10 @@
+.offcanvas-custom {
+    transform: translateX(-100%);
+    left: 0;
+    right: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  .offcanvas-custom.show {
+    transform: translateX(0);
+  }
+  
