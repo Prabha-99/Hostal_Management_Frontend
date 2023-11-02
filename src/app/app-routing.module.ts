@@ -16,6 +16,7 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { QRCodeComponent } from './qrcode/qrcode.component';
 import { NavComponent } from './nav/nav.component';
 import { ComplainComponent } from './complain/complain.component';
+import { StudentSideComponent } from './student-side/student-side.component';
 
 
 
@@ -34,8 +35,8 @@ const routes: Routes = [
 
   {path:"qrcode",component:QRCodeComponent},
   {path:"nav",component:NavComponent},
-  {path:"complain",component:ComplainComponent}
-
+  {path:"complain",component:ComplainComponent},
+  {path:"student-side",component:StudentSideComponent}
   
 ];
 
