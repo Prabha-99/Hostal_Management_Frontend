@@ -14,6 +14,8 @@ import { StaffRegistrationComponent } from './staff-registration/staff-registrat
 import { QRCodeComponent } from './qrcode/qrcode.component';
 import { NavComponent } from './nav/nav.component';
 import { ComplainComponent } from './complain/complain.component';
+import { SwComplainsComponent } from './sw-complains/sw-complains.component';
+import { AwComplainsComponent } from './aw-complains/aw-complains.component';
 
 
 
@@ -27,7 +29,9 @@ const routes: Routes = [
   {path:"staff-registration",component:StaffRegistrationComponent},
   {path:"qrcode",component:QRCodeComponent},
   {path:"nav",component:NavComponent},
-  {path:"complain",component:ComplainComponent}
+  {path:"complain",component:ComplainComponent},
+  {path:"sw-complains",component:SwComplainsComponent},
+  {path:"aw-complains",component:AwComplainsComponent}
   
 ];
 
