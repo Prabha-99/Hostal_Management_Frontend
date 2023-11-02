@@ -12,7 +12,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AdminSideComponent } from './admin-side/admin-side.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
-import { ChangRoomComponent } from './chang-room/chang-room.component'; 
+import { ChangRoomComponent } from './chang-room/chang-room.component';
+import { RoomsComponent } from './rooms/rooms.component'; 
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ChangRoomComponent } from './chang-room/chang-room.component';
     AdminSideComponent,
     RegistrationComponent,
     StaffRegistrationComponent,
-    ChangRoomComponent
+    ChangRoomComponent,
+    RoomsComponent
   ],
   imports: [
     FormsModule,

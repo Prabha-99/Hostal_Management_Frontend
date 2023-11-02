@@ -12,6 +12,7 @@ import { AdminSideComponent } from './admin-side/admin-side.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
 import { ChangRoomComponent } from './chang-room/chang-room.component';
+import { RoomsComponent } from './rooms/rooms.component';
 
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:"admin-side",component:AdminSideComponent},
   {path:"registration",component:RegistrationComponent},
   {path:"staff-registration",component:StaffRegistrationComponent},
-  {path:"change-room",component:ChangRoomComponent}
+  {path:"change-room",component:ChangRoomComponent},
+  {path:"rooms",component:RoomsComponent}
   
 ];
 
