@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { SwComplainsService } from './sw-complains.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sw-complains',
@@ -15,7 +16,13 @@ export class SwComplainsComponent {
   error='';
 
 
-  constructor(private http: HttpClient,private swComplainsService: SwComplainsService ) { }
+  constructor(private router: Router,private http: HttpClient,private swComplainsService: SwComplainsService ) { }
+
+  reloadPage() {
+    this.router.navigate(['/sw-complains'], {
+      queryParamsHandling: 'merge', // Preserve query parameters
+    });
+  }
 
 
   ngOnInit(): void {
