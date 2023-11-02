@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RegistrationService } from '../Service/registration.service';
 
+
 @Component({
   selector: 'app-staff-registration',
   templateUrl: './staff-registration.component.html',
