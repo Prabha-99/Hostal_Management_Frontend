@@ -9,7 +9,17 @@
 
     <div class="container">
         <div class="row">
+            <app-nav-bar></app-nav-bar> <!--Call navbar-->
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-2">
+                <app-student-side-bar></app-student-side-bar> <!--Call sidebar-->
+            </div>
             <div class="col-md-6 offset-md-3">
+                <br><br>
                 <div class="form-header">
                     <h2><b>SUBMIT YOUR COMPLAINT</b></h2>
                 </div><br>
@@ -76,8 +86,12 @@
                 </form>
                 <div class="alert alert-success" *ngIf="showMessage">{{successMessage}}</div>
             </div>
+    
+              
         </div>
     </div>
+
+    
 
 </body>
 </html>
