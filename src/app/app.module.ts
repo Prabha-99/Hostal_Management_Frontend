@@ -18,6 +18,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SwComplainsComponent } from './sw-complains/sw-complains.component';
 import { AwComplainsComponent } from './aw-complains/aw-complains.component';
 import { DeanComplainsComponent } from './dean-complains/dean-complains.component';
+import { StudentSideBarComponent } from './student-side-bar/student-side-bar.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { DeanComplainsComponent } from './dean-complains/dean-complains.componen
     ComplainComponent,
     SwComplainsComponent,
     AwComplainsComponent,
-    DeanComplainsComponent
+    DeanComplainsComponent,
+    StudentSideBarComponent
   ],
   imports: [
     FormsModule,

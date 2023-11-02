@@ -16,6 +16,7 @@ import { NavComponent } from './nav/nav.component';
 import { ComplainComponent } from './complain/complain.component';
 import { SwComplainsComponent } from './sw-complains/sw-complains.component';
 import { AwComplainsComponent } from './aw-complains/aw-complains.component';
+import { StudentSideBarComponent } from './student-side-bar/student-side-bar.component';
 
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path:"nav",component:NavComponent},
   {path:"complain",component:ComplainComponent},
   {path:"sw-complains",component:SwComplainsComponent},
-  {path:"aw-complains",component:AwComplainsComponent}
+  {path:"aw-complains",component:AwComplainsComponent},
+  {path:"student-side-bar",component:StudentSideBarComponent}
   
 ];
 
