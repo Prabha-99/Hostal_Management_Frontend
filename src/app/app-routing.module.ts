@@ -13,6 +13,10 @@ import { RegistrationComponent } from './registration/registration.component';
 import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
 import { ChangRoomComponent } from './chang-room/chang-room.component';
 import { RoomsComponent } from './rooms/rooms.component';
+import { QRCodeComponent } from './qrcode/qrcode.component';
+import { NavComponent } from './nav/nav.component';
+import { ComplainComponent } from './complain/complain.component';
+
 
 
 
@@ -24,8 +28,14 @@ const routes: Routes = [
   {path:"admin-side",component:AdminSideComponent},
   {path:"registration",component:RegistrationComponent},
   {path:"staff-registration",component:StaffRegistrationComponent},
+
   {path:"change-room",component:ChangRoomComponent},
-  {path:"rooms",component:RoomsComponent}
+  {path:"rooms",component:RoomsComponent},
+
+  {path:"qrcode",component:QRCodeComponent},
+  {path:"nav",component:NavComponent},
+  {path:"complain",component:ComplainComponent}
+
   
 ];
 
