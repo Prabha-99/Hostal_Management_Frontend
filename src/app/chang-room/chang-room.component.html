@@ -48,7 +48,7 @@
                               <td>{{ student.reg_no }}</td>
                               <td>{{ student.room }}</td>
                               <td>
-                                <button (click)="openUpdateModal(student.id, student.room)">Update Room</button>
+                                <button class="btn btn-dark ml-2" (click)="openUpdateModal(student.id, student.room)">Update Room</button>
                               </td>
                             </tr>
                           </tbody>
@@ -60,7 +60,7 @@
                     <h3>Update Room</h3>
                     <label>New Room Number:</label>
                     <input [(ngModel)]="newRoomNumber" />
-                    <button (click)="updateRoom()">Save</button>
+                    <button class="btn btn-dark ml-2" (click)="updateRoom()">Save</button>
                 </div>
             </div>
         </div>
