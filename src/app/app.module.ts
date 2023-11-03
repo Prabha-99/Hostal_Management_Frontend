@@ -25,6 +25,12 @@ import { DeanComplainsComponent } from './dean-complains/dean-complains.componen
 import { StudentSideBarComponent } from './student-side-bar/student-side-bar.component';
 import { ItemsComponent } from './items/items.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SubWardenDashComponent } from './sub-warden-dash/sub-warden-dash.component';
+import { WardenDashComponent } from './warden-dash/warden-dash.component';
+import { DeanDashComponent } from './dean-dash/dean-dash.component';
+import { SubWardenSideComponent } from './sub-warden-side/sub-warden-side.component';
+import { WardenSideComponent } from './warden-side/warden-side.component';
+import { DeanSideComponent } from './dean-side/dean-side.component';
 
 
 @NgModule({
@@ -49,7 +55,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AwComplainsComponent,
     DeanComplainsComponent,
     StudentSideBarComponent,
-    ItemsComponent
+    ItemsComponent,
+    SubWardenDashComponent,
+    WardenDashComponent,
+    DeanDashComponent,
+    SubWardenSideComponent,
+    WardenSideComponent,
+    DeanSideComponent
 
   ],
   imports: [
