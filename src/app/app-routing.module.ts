@@ -23,6 +23,12 @@ import { StudentSideBarComponent } from './student-side-bar/student-side-bar.com
 import { ItemsComponent } from './items/items.component';
 
 import { DeanComplainsComponent } from './dean-complains/dean-complains.component';
+import { DeanDashComponent } from './dean-dash/dean-dash.component';
+import { DeanSideComponent } from './dean-side/dean-side.component';
+import { SubWardenDashComponent } from './sub-warden-dash/sub-warden-dash.component';
+import { SubWardenSideComponent } from './sub-warden-side/sub-warden-side.component';
+import { WardenDashComponent } from './warden-dash/warden-dash.component';
+import { WardenSideComponent } from './warden-side/warden-side.component';
 
 
 
@@ -50,7 +56,13 @@ const routes: Routes = [
 
   {path:"items",component:ItemsComponent},
 
-  {path:"dean-complains",component:DeanComplainsComponent}
+  {path:"dean-complains",component:DeanComplainsComponent},
+  {path:"dean-dash",component:DeanDashComponent},
+  {path:"dean-side",component:DeanSideComponent},
+  {path:"sub-warden-dash",component:SubWardenDashComponent},
+  {path:"sub-warden-side",component:SubWardenSideComponent},
+  {path:"warden-dash",component:WardenDashComponent},
+  {path:"warden-side",component:WardenSideComponent}
 
   
 ];
