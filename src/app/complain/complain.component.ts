@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ComplainService } from './complain.service';
+import { LoginService } from '../Service/login.service';
 
 @Component({
   selector: 'app-complain',
@@ -13,6 +14,7 @@ export class ComplainComponent {
   showMessage: boolean = false;
   
   
+  
 
   complainData: any = {
     cType: 'Broken Property', // Initialize with the default value
@@ -22,7 +24,7 @@ export class ComplainComponent {
 
   selectedFile: File | undefined;
 
-  constructor(private complainService: ComplainService) {}
+  constructor(private complainService: ComplainService, private loginService: LoginService ) {}
 
   resetForm(): void {
     this.complainData = {
