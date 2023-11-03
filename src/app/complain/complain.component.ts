@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ComplainService } from './complain.service';
 import { LoginService } from '../Service/login.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-complain',
@@ -12,19 +13,30 @@ export class ComplainComponent {
 
   successMessage: string = '';
   showMessage: boolean = false;
-  
-  
+  room: string | undefined;
+  firstname: string | undefined;
+  reg_no: string | undefined;
   
 
   complainData: any = {
     cType: 'Broken Property', // Initialize with the default value
-    room: '',
     description: '',
   };
 
   selectedFile: File | undefined;
 
-  constructor(private complainService: ComplainService, private loginService: LoginService ) {}
+  constructor(private http: HttpClient,
+    private complainService: ComplainService, 
+    private loginService: LoginService ) {}
+
+  ngOnInit(): void {
+
+    this.loginService.getUserInfo().subscribe(user => {
+      this.room = user.room;
+      this.firstname = user.firstname;
+      this.reg_no=user.reg_no;
+    });
+  }
 
   resetForm(): void {
     this.complainData = {
