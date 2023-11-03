@@ -19,6 +19,7 @@ import { ComplainComponent } from './complain/complain.component';
 import { SwComplainsComponent } from './sw-complains/sw-complains.component';
 import { AwComplainsComponent } from './aw-complains/aw-complains.component';
 import { StudentSideBarComponent } from './student-side-bar/student-side-bar.component';
+import { ItemsComponent } from './items/items.component';
 
 
 
@@ -41,7 +42,8 @@ const routes: Routes = [
   {path:"complain",component:ComplainComponent},
   {path:"sw-complains",component:SwComplainsComponent},
   {path:"aw-complains",component:AwComplainsComponent},
-  {path:"student-side-bar",component:StudentSideBarComponent}
+  {path:"student-side-bar",component:StudentSideBarComponent},
+  {path:"items",component:ItemsComponent}
   
 ];
 

@@ -35,15 +35,27 @@
                 <br><br><br><br>
                 <br><br>
                 <div>
-                    <h2>Rooms</h2>
+                    <h2>Add Items</h2>
                     <div class="form-group">
+                        <label for="propID">Item ID:</label>
+                        <div class="input-group">
+                            <input id="propID" [(ngModel)]="newItem.propID" class="form-control" />
+                        </div>
+                        <label for="name">Item Name:</label>
+                        <div class="input-group">
+                            <input id="name" [(ngModel)]="newItem.name" class="form-control" />
+                        </div>
+                        <label for="status">Status:</label>
+                        <div class="input-group">
+                            <input id="status" [(ngModel)]="newItem.status" class="form-control" />
+                        </div>
                         <label for="roomNo">Room Number:</label>
                         <div class="input-group">
-                            <input id="roomNo" [(ngModel)]="newRoom.room_no" class="form-control" />
+                            <input id="roomNo" [(ngModel)]="newItem.room_no" class="form-control" />
                         </div>
                         <br>
                         <div class="input-group-append">
-                            <button (click)="addRoom()" class="btn btn-dark ml-2">Add Room</button>
+                            <button (click)="addItem()" class="btn btn-dark ml-2">Add Item</button>
                         </div>
                         
                     </div>
@@ -51,23 +63,26 @@
                     
 
                     <div>
-                        <h2>All Rooms</h2>
+                        <h3>All Items</h3>
                         <table border="1">
                             <thead>
                                 <tr>
+                                    <th>Item ID</th>
+                                    <th>Item Name</th>
+                                    <th>Status</th>
                                     <th>Room Number</th>
-                                    <th>Items</th>
-                                    <th>Students</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let room of rooms">
-                                    <td>{{ room.room_no }}</td>
-                                    <td>{{ room.no_of_items }}</td>
-                                    <td>{{ room.no_of_students }}</td>
+                                <tr *ngFor="let item of items">
+                                    <td>{{ item.propID }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.status }}</td>
+                                    <td>{{ item.room_no }}</td>
                                 </tr>
                             </tbody>
                         </table>
+                        <br><br><br>
                     </div>
                 </div>
             </div>
