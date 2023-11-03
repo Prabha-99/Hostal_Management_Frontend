@@ -9,7 +9,17 @@
 
     <div class="container">
         <div class="row">
+            <app-nav-bar></app-nav-bar> <!--Call navbar-->
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-2">
+                <app-student-side-bar></app-student-side-bar> <!--Call sidebar-->
+            </div>
             <div class="col-md-6 offset-md-3">
+                <br><br>
                 <div class="form-header">
                     <h2><b>SUBMIT YOUR COMPLAINT</b></h2>
                 </div><br>
@@ -17,18 +27,22 @@
                 <form class="was-validated" (ngSubmit)="onSubmit()" #complainForm="ngForm">
 
                     <div class="mb-3">
-                        <label for="validationTextarea" class="form-label"><b>Attach the scanned Property QR here: </b></label>
+                        <label for="validationTextarea" class="form-label"><b>Attach a Image of the Damaged or Broken Property: </b></label>
                         <input type="file" class="form-control" id="fileInput" aria-label="file example" required (change)="onFileSelected($event)">
                     </div>
 
                     <label for="validationTextarea" class="form-label"><b>Select the Complaint Type: </b></label>
-                    <div class="form-check">
+                    <div class="form-check ">
                         <input type="radio" class="form-check-input" id="validationFormCheck2" name="complainType" value="Broken Property" required [(ngModel)]="complainData.cType" ngModel name="cType">
                         <label class="form-check-label" for="validationFormCheck2">Broken Property</label>
                     </div>
-                    <div class="form-check mb-3">
+                    <div class="form-check ">
                         <input type="radio" class="form-check-input" id="validationFormCheck3" name="complainType" value="Damaged Property" required [(ngModel)]="complainData.cType" ngModel name="cType">
                         <label class="form-check-label" for="validationFormCheck3">Damaged Property</label>
+                    </div>
+                    <div class="form-check ">
+                        <input type="radio" class="form-check-input" id="validationFormCheck3" name="complainType" value="Missing Item" required [(ngModel)]="complainData.cType" ngModel name="cType">
+                        <label class="form-check-label" for="validationFormCheck3">Missing Item</label>
                     </div>
 
                     <div class="mb-3">
@@ -37,7 +51,27 @@
                             <option value="" disabled>Choose one</option>
                             <option value="402">402</option>
                             <option value="403">403</option>
-                            <!-- Add more options here -->
+                            <option value="403">404</option>
+                            <option value="403">405</option>
+                            <option value="403">406</option>
+                            <option value="403">407</option>
+                            <option value="403">408</option>
+                            <option value="403">409</option>
+                            <option value="402">410</option>
+                            <option value="403">411</option>
+                            <option value="403">412</option>
+                            <option value="403">413</option>
+                            <option value="403">414</option>
+                            <option value="403">415</option>
+                            <option value="403">416</option>
+                            <option value="403">417</option>
+                            <option value="403">418</option>
+                            <option value="403">420</option>
+                            <option value="403">421</option>
+                            <option value="403">422</option>
+                            <option value="403">423</option>
+                            <option value="403">424</option>
+                            <option value="403">425</option> 
                         </select>
                     </div>
 
@@ -52,8 +86,12 @@
                 </form>
                 <div class="alert alert-success" *ngIf="showMessage">{{successMessage}}</div>
             </div>
+    
+              
         </div>
     </div>
+
+    
 
 </body>
 </html>

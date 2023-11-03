@@ -1,65 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <!-- Off Canvas -->
 
-<div class="offcanvas offcanvas-start sidebar-nav bg-dark"  tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
-    <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
-  </div>
-  <div class="offcanvas-body p-0">
-
-    <div class="navbar-dark bg-dark">
-      <ul class="navbar-nav">
-        <li>
-          <div class="text-muted small fw-bold text-uppercase px-3"> 
-          </div>
-        </li>
-
-        <li>
-          <a routerLink="/registration" class="nav-link px-3 active">
-            <span class="me-2" style="font-size: 25px">
-              <i class="bi bi-person-circle"></i>
-            </span>
-            <span style="font-size: 15px">Student Registration</span>  
-          </a>
-        </li>
-        <li>
-          <a routerLink="/staff-registration" class="nav-link px-3 active">
-            <span class="me-2" style="font-size: 25px">
-              <i class="bi bi-person-circle"></i>
-            </span>
-            <span style="font-size: 15px">Staff Registration</span>  
-          </a>
-        </li>
-        <li>
-          <a routerLink="/change-room" class="nav-link px-3 active">
-            <span class="me-2" style="font-size: 25px">
-              <i class="bi bi-person-circle"></i>
-            </span>
-            <span style="font-size: 15px">Student Rooms Change</span>  
-          </a>
-        </li>
-        <li>
-          <a routerLink="/rooms" class="nav-link px-3 active">
-            <span class="me-2" style="font-size: 25px">
-              <i class="bi bi-person-circle"></i>
-            </span>
-            <span style="font-size: 15px">Rooms</span>  
-          </a>
-        </li>
-      </ul>
+<!--Main Navigation-->
+<header>
+  <!-- Sidebar -->
+  
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <br><br>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-lock fa-fw me-3"></i><span>Home</span>
+        </a>
+        <a href="/registration" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Student Registration</span>
+        </a>
+        <a href="/staff-registration" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>Staff Registration</span>
+        </a>
+        <a href="/" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>Student Change Rooms</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>Rooms</span>
+        </a>
+      </div>
     </div>
+  </nav>
+  <!-- Sidebar -->
+</header>
+<!--Main Navigation-->
 
-
-  </div>
-</div>
-<!-- Off canvas Ends -->
-</body>
-</html>
+<!--Main layout-->
+<main style="margin-top: 58px;">
+  <div class="container pt-4"></div>
+</main>
+<!--Main layout-->

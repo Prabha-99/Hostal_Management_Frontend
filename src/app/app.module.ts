@@ -19,6 +19,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComplainComponent } from './complain/complain.component'; 
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { SwComplainsComponent } from './sw-complains/sw-complains.component';
+import { AwComplainsComponent } from './aw-complains/aw-complains.component';
+import { DeanComplainsComponent } from './dean-complains/dean-complains.component';
+import { StudentSideBarComponent } from './student-side-bar/student-side-bar.component';
 
 
 @NgModule({
@@ -37,7 +41,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
     QRCodeComponent,
     NavComponent,
-    ComplainComponent
+    ComplainComponent,
+    ComplainComponent,
+    SwComplainsComponent,
+    AwComplainsComponent,
+    DeanComplainsComponent,
+    StudentSideBarComponent
 
   ],
   imports: [
