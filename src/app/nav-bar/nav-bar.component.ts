@@ -9,21 +9,18 @@ import { LoginService } from '../Service/login.service';
 })
 export class NavBarComponent implements OnInit{
 
-  username: string | undefined;
+  firstname: string | undefined;
+  lastname: string | undefined;
 
 
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loginService.getUsername().subscribe(
-      (response: any) => {
-        const email = response.firstname; // Email is returned in the response
-        const atIndex = email.indexOf('@'); // Find the index of the '@' symbol
-        this.username = email.substring(0, atIndex); // Extract the string before the '@' symbol
-      },
-      (error: any) => {
-      }
-    );
+
+    this.loginService.getUserInfo().subscribe(user => {
+      this.firstname = user.firstname;
+      this.lastname = user.lastname;
+    });
   }
 
   onLogout() {
