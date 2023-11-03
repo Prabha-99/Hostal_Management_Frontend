@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title> 
+  <style>
+    /* Add some CSS styling for the table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+    <app-nav-bar></app-nav-bar>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <app-admin-side></app-admin-side>
+            </div>
+            <div class="col-10">
+                <br><br><br><br>
+                <br><br>
+                <div>
+                    <h2>Rooms</h2>
+                    <div class="form-group">
+                        <label for="roomNo">Room Number:</label>
+                        <div class="input-group">
+                            <input id="roomNo" [(ngModel)]="newRoom.room_no" class="form-control" />
+                        </div>
+                        <br>
+                        <div class="input-group-append">
+                            <button (click)="addRoom()" class="btn btn-dark ml-2">Add Room</button>
+                        </div>
+                        
+                    </div>
+                    <br><br>
+                    
+
+                    <div>
+                        <h3>All Rooms</h3>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Room Number</th>
+                                    <th>Items</th>
+                                    <th>Students</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let room of rooms">
+                                    <td>{{ room.room_no }}</td>
+                                    <td>{{ room.no_of_items }}</td>
+                                    <td>{{ room.no_of_students }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

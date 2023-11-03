@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title> 
+  <style>
+    /* Add some CSS styling for the table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+    <app-nav-bar></app-nav-bar>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <app-admin-side></app-admin-side>
+            </div>
+            <div class="col-10">
+                <br><br><br><br><br><br><br><br>
+                <div class="d-flex justify-content-center">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Registration Number</th>
+                                <th>Room Number</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let student of studentsData">
+                              <td>{{ student.id }}</td>
+                              <td>{{ student.reg_no }}</td>
+                              <td>{{ student.room }}</td>
+                              <td>
+                                <button class="btn btn-dark ml-2" (click)="openUpdateModal(student.id, student.room)">Update Room</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                    </table>
+                </div>
+
+                <!-- Update Room Modal -->
+                <div *ngIf="selectedUserId !== null">
+                    <h3>Update Room</h3>
+                    <label>New Room Number:</label>
+                    <input [(ngModel)]="newRoomNumber" />
+                    <button class="btn btn-dark ml-2" (click)="updateRoom()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
