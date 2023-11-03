@@ -4,9 +4,9 @@
         <button type="button" class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" disabled>
           <h3><b></b></h3>
         </button>
-        <!-- <a class="navbar-brand" routerLink="/">
+        <a class="navbar-brand" routerLink="/">
           <img src="./uor.png" height="70" style="max-width: 100%;">
-        </a> -->
+        </a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="#"></a>
@@ -16,17 +16,13 @@
   
         <div class="navbar-nav ms-auto">
           <div class="ms-auth">
-            <!-- <div class="dropdown">
-              <button class="btn custom-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Welcome&nbsp; <span style="color: rgb(255, 255, 255); font-weight: bold;"> {{ username }} </span>
-              </button>
-            </div> -->
-
-            <br>
-              <div class="fixed-logout-container">
-                <button class="btn custom-button" (click)="onLogout()">Logout</button>
-              </div>
-              <br>
+            <div class="dropdown">
+              <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <b>Welcome&nbsp;</b> <span style="color: rgb(187, 247, 76);"> {{firstname}} {{lastname}} </span>
+              </button><button class="btn btn-danger" (click)="onLogout()">Logout</button>
+            </div>
+            
+              
             
           </div>
         </div>

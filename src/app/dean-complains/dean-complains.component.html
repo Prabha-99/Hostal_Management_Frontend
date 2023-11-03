@@ -1,1 +1,36 @@
-<p>dean-complains works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Complain ID</th>
+                <th>Student ID</th>
+                <th>Room ID</th>
+                <th>Complain Type</th>
+                <th>Description</th>
+                <th>Damaged Property</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let file of files">
+                <td>{{ file.cid }}</td>
+                <td>{{reg_no}}</td>
+                <td>{{ file.room }}</td>
+                <td>{{ file.c_type }}</td>
+                <td>{{ file.description}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-dark" (click)="downloadFile(file.report_id, file.report_name)">Download Image File</button>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+    </div>
+</body>
+</html>

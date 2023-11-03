@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { SwComplainsService } from './sw-complains.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../Service/login.service';
 
 @Component({
   selector: 'app-sw-complains',
@@ -14,9 +15,14 @@ export class SwComplainsComponent {
   originalFiles!: any[]; // Store the original files before filtering
   searchValue: Date | null | undefined;
   error='';
+  reg_no: string | undefined;
 
 
-  constructor(private router: Router,private http: HttpClient,private swComplainsService: SwComplainsService ) { }
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private swComplainsService: SwComplainsService,
+    private loginService: LoginService ) { }
 
   reloadPage() {
     this.router.navigate(['/sw-complains'], {
@@ -26,6 +32,7 @@ export class SwComplainsComponent {
 
 
   ngOnInit(): void {
+
     this.swComplainsService.getAllFiles().subscribe(
       (response) => {
         this.files = response;
@@ -35,6 +42,11 @@ export class SwComplainsComponent {
         console.log('Error retrieving files:', error);
       }
     );
+
+    this.loginService.getUserInfo().subscribe(user => {
+      this.reg_no = user.reg_no;
+      
+    });
   }
 
 
