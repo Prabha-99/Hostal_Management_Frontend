@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AwComplainsService } from './aw-complains.service';
+import { Router } from '@angular/router';
+import { LoginService } from '../Service/login.service';
 
 @Component({
   selector: 'app-aw-complains',
@@ -13,10 +15,24 @@ export class AwComplainsComponent {
   originalFiles!: any[]; // Store the original files before filtering
   searchValue: Date | null | undefined;
   error='';
+  reg_no: string | undefined;
 
-  constructor(private http: HttpClient,private awComplainsService: AwComplainsService ) { }
+
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private awComplainsService: AwComplainsService,
+    private loginService: LoginService ) { }
+
+  reloadPage() {
+    this.router.navigate(['/sw-complains'], {
+      queryParamsHandling: 'merge', // Preserve query parameters
+    });
+  }
+
 
   ngOnInit(): void {
+
     this.awComplainsService.getAllFiles().subscribe(
       (response) => {
         this.files = response;
@@ -26,6 +42,11 @@ export class AwComplainsComponent {
         console.log('Error retrieving files:', error);
       }
     );
+
+    this.loginService.getUserInfo().subscribe(user => {
+      this.reg_no = user.reg_no;
+      
+    });
   }
 
 
@@ -39,7 +60,7 @@ export class AwComplainsComponent {
     };
 
     // Send a GET request to the backend endpoint
-    this.http.get('http://localhost:8080/api/academicwardencomplains/download?id=' + report_id, httpOptions)
+    this.http.get('http://localhost:8080/api/complain/download?id=' + report_id, httpOptions)
     .subscribe((response: any) => {
 
         // Create a blob from the response data
