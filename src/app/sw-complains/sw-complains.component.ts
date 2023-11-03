@@ -1,28 +1,27 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SwComplainsService } from './sw-complains.service';
 import { Router } from '@angular/router';
 import { LoginService } from '../Service/login.service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-sw-complains',
   templateUrl: './sw-complains.component.html',
   styleUrls: ['./sw-complains.component.css']
 })
-export class SwComplainsComponent {
-
+export class SwComplainsComponent implements OnInit {
   files!: any[];
   originalFiles!: any[]; // Store the original files before filtering
-  searchValue: Date | null | undefined;
-  error='';
   reg_no: string | undefined;
-
+  p: number = 1; // Current page number
+  itemsPerPage: number = 10; // Number of items to display per page
+  http: any;
 
   constructor(
     private router: Router,
-    private http: HttpClient,
     private swComplainsService: SwComplainsService,
-    private loginService: LoginService ) { }
+    private loginService: LoginService
+  ) {}
 
   reloadPage() {
     this.router.navigate(['/sw-complains'], {
@@ -30,9 +29,7 @@ export class SwComplainsComponent {
     });
   }
 
-
   ngOnInit(): void {
-
     this.swComplainsService.getAllFiles().subscribe(
       (response) => {
         this.files = response;
@@ -43,12 +40,10 @@ export class SwComplainsComponent {
       }
     );
 
-    this.loginService.getUserInfo().subscribe(user => {
+    this.loginService.getUserInfo().subscribe((user) => {
       this.reg_no = user.reg_no;
-      
     });
   }
-
 
   downloadFile(report_id: number, report_name: string) {
 
@@ -74,7 +69,7 @@ export class SwComplainsComponent {
         link.href = url;
         link.download = report_name;
         link.click();
-      }, error => {
+      }, (error: any) => {
         console.error('Error occurred while downloading the file:', error);
       });
   }
@@ -95,8 +90,4 @@ export class SwComplainsComponent {
       }
     );
   }
-  
-  
-
-
 }
