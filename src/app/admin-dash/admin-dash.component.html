@@ -1,16 +1,64 @@
-<div class="container">
-    <div class="row">
-        <app-nav-bar></app-nav-bar> <!--Call navbar-->
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-3">
-            <app-admin-side></app-admin-side> <!--Call sidebar-->
-        </div>
-        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <app-nav-bar></app-nav-bar> 
 
-          
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <app-admin-side></app-admin-side>
+            </div>
+            <div class="col-10">
+                <br><br><br><br>
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card bg-c-blue text-white">
+                                <div class="card-body">
+                                    <h2>User Count</h2>
+                                    <br><br>
+                                    <h2 class="text-end"><i class="bi bi-person-check"></i></h2>
+                                    <p>Available Users:<span class="float-end">{{ users }}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                        <div class="col-sm-4">
+                            <div class="card bg-c-blue text-white">
+                                <div class="card-body">
+                                    <h2>Rooms Count</h2>
+                                    <br><br>
+                                    <h2 class="text-end"><i class="bi bi-hospital"></i><span> </span></h2>
+                                    <p>Available Rooms:<span class="float-end">{{rooms}}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-sm-4">
+                            <div class="card bg-c-blue text-white">
+                                <div class="card-body">
+                                    <h2>Items Count</h2>
+                                    <br><br>
+                                    <h2 class="text-end"><i class="bi bi-building"></i><span> </span></h2>
+                                    <p>Available Items:<span class="float-end">{{items}}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+    
+            </div>
+        </div>
     </div>
-</div>
+     
+</body>
+</html>

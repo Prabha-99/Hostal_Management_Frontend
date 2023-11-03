@@ -33,6 +33,7 @@
             <div class="col-10">
                 <br><br><br><br><br><br><br><br>
                 <div class="d-flex justify-content-center">
+                  <h2>Update Room Number: </h2>
                     <table>
                         <thead>
                             <tr>
@@ -57,9 +58,10 @@
 
                 <!-- Update Room Modal -->
                 <div *ngIf="selectedUserId !== null">
-                    <h3>Update Room</h3>
+                    <h2>Update Room</h2>
                     <label>New Room Number:</label>
-                    <input [(ngModel)]="newRoomNumber" />
+                    <input [(ngModel)]="newRoomNumber" class="form-control"/>
+                    <br>
                     <button class="btn btn-dark ml-2" (click)="updateRoom()">Save</button>
                 </div>
             </div>
