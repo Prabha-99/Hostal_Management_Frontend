@@ -65,25 +65,27 @@
                     <div>
                         <h3>All Items</h3>
                         <table border="1">
-                            <thead>
-                                <tr>
-                                    <th>Item ID</th>
-                                    <th>Item Name</th>
-                                    <th>Status</th>
-                                    <th>Room Number</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let item of items">
-                                    <td>{{ item.propID }}</td>
-                                    <td>{{ item.name }}</td>
-                                    <td>{{ item.status }}</td>
-                                    <td>{{ item.room_no }}</td>
-                                </tr>
-                            </tbody>
+                          <thead>
+                            <tr>
+                              <th>Item ID</th>
+                              <th>Item Name</th>
+                              <th>Status</th>
+                              <th>Room Number</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let item of items | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+                              <td>{{ item.propID }}</td>
+                              <td>{{ item.name }}</td>
+                              <td>{{ item.status }}</td>
+                              <td>{{ item.room_no }}</td>
+                            </tr>
+                          </tbody>
                         </table>
-                        <br><br><br>
-                    </div>
+                      
+                        <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+                      </div>
+                    
                 </div>
             </div>
         </div>

@@ -24,6 +24,7 @@ import { AwComplainsComponent } from './aw-complains/aw-complains.component';
 import { DeanComplainsComponent } from './dean-complains/dean-complains.component';
 import { StudentSideBarComponent } from './student-side-bar/student-side-bar.component';
 import { ItemsComponent } from './items/items.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { ItemsComponent } from './items/items.component';
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    BrowserModule
+    BrowserModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
