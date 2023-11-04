@@ -20,6 +20,7 @@
     "@angular/router": "^16.1.0",
     "@ng-bootstrap/ng-bootstrap": "^15.1.2",
     "@popperjs/core": "^2.11.6",
+    "@zxing/library": "^0.20.0",
     "@zxing/ngx-scanner": "^16.1.0",
     "angular-calendar": "^0.31.0",
     "bootstrap": "^5.3.2",
