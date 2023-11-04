@@ -32,6 +32,9 @@ import { SubWardenSideComponent } from './sub-warden-side/sub-warden-side.compon
 import { WardenSideComponent } from './warden-side/warden-side.component';
 import { DeanSideComponent } from './dean-side/dean-side.component';
 
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
 
 @NgModule({
   declarations: [
@@ -70,7 +73,9 @@ import { DeanSideComponent } from './dean-side/dean-side.component';
     AppRoutingModule,
     NgbModule,
     BrowserModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxSpinnerModule,
+    ZXingScannerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
