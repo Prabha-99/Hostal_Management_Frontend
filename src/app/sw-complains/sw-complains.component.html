@@ -37,7 +37,7 @@
                   <tbody>
                     <tr *ngFor="let file of files | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
                       <td>{{ file.cid }}</td>
-                      <td>{{ reg_no }}</td>
+                      <td>{{ file.reg_no }}</td>
                       <td>{{ file.room }}</td>
                       <td>{{ file.c_type }}</td>
                       <td>{{ file.description }}</td>

@@ -29,7 +29,7 @@ body{
   }
   
   .company-image {
-    max-width: 100%;
+    width:fit-content;
     height: auto;
     margin-left: auto;
   }
@@ -41,7 +41,7 @@ body{
     }
     
     .company-image {
-      max-width: 80%;
+      max-width: 100%;
       margin-left: 2rem;
     }
   }
