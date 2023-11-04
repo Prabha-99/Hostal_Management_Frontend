@@ -20,5 +20,13 @@ export class StudentService {
     const params = { userId, newRoomNumber };
     return this.http.post<any>(`${this.apiUrl}/update-room`, null, { params });
   }
+
+  getStudentInfo(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/students`);
+  }
+
+  getStaffInfo(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/staff`);
+  }
   
 }
