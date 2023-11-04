@@ -4,6 +4,7 @@ import { ComplainService } from './complain.service';
 import { LoginService } from '../Service/login.service';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { BarcodeFormat } from '@zxing/library';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-complain',
@@ -20,15 +21,30 @@ export class ComplainComponent {
   successMessage: string = '';
   showMessage: boolean = false;
 
+  room: string | undefined;
+  firstname: string | undefined;
+  reg_no: string | undefined;
+
   complainData: any = {
     cType: 'Broken Property', // Initialize with the default value
-    room: '',
     description: '',
   };
 
   selectedFile: File | undefined;
 
-  constructor(private complainService: ComplainService, private loginService: LoginService ) {}
+  constructor(
+    private http: HttpClient,
+    private complainService: ComplainService,
+    private loginService: LoginService
+  ) {}
+
+  ngOnInit(): void {
+    this.loginService.getUserInfo().subscribe((user) => {
+      this.room = user.room;
+      this.firstname = user.firstname;
+      this.reg_no = user.reg_no;
+    });
+  }
 
   resetForm(): void {
     this.complainData = {
@@ -52,18 +68,19 @@ export class ComplainComponent {
   onCodeScanned(result: string): void {
     this.propID = result;
     console.log('Scanned PropID: ', this.propID);
+    this.showAlert('QR Code Scanned: ' + this.propID);
   }
 
   onSubmit() {
     this.complainData.propID = this.propID; // Include the propID in the complaint data
 
     if (this.selectedFile) {
-        this.uploadFile(this.selectedFile).subscribe((fileUrl) => {
-            this.complainData.imagePath = fileUrl; // Store the file path in the complainData object
-            this.submitComplaint();
-        });
-    } else {
+      this.uploadFile(this.selectedFile).subscribe((fileUrl) => {
+        this.complainData.imagePath = fileUrl; // Store the file path in the complainData object
         this.submitComplaint();
+      });
+    } else {
+      this.submitComplaint();
     }
   }
 
@@ -96,4 +113,7 @@ export class ComplainComponent {
     return this.complainService.uploadFile(formData);
   }
 
+  private showAlert(message: string): void {
+    alert(message);
+  }
 }

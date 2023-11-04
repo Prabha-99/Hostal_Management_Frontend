@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <app-nav-bar></app-nav-bar> <!--Call navbar-->
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-2">
+                <app-student-side-bar></app-student-side-bar> <!--Call sidebar-->
+            </div>
+            <div class="col-md-10 offset-md-3">
+                
+                <div class="container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th>Complain ID</th>
+                            <th>Complain Type</th>
+                            <th>Description</th>
+                            <th>Damaged Property</th>
+                            <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let file of files">
+                            <td>{{ file.cid }}</td>
+                            <td>{{ file.c_type }}</td>
+                            <td>{{ file.description}}</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-dark" (click)="downloadFile(file.report_id, file.report_name)">Download Image File</button>
+                            </td>
+                            <td class="status-highlight">{{ file.status }}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>              
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
