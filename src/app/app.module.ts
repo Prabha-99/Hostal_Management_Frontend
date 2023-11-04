@@ -33,6 +33,7 @@ import { DeanSideComponent } from './dean-side/dean-side.component';
 
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -62,7 +63,8 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     DeanDashComponent,
     SubWardenSideComponent,
     WardenSideComponent,
-    DeanSideComponent
+    DeanSideComponent,
+    UsersComponent
 
 
   ],

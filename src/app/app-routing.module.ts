@@ -26,6 +26,7 @@ import { SubWardenDashComponent } from './sub-warden-dash/sub-warden-dash.compon
 import { SubWardenSideComponent } from './sub-warden-side/sub-warden-side.component';
 import { WardenDashComponent } from './warden-dash/warden-dash.component';
 import { WardenSideComponent } from './warden-side/warden-side.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -57,7 +58,8 @@ const routes: Routes = [
   {path:"sub-warden-dash",component:SubWardenDashComponent},
   {path:"sub-warden-side",component:SubWardenSideComponent},
   {path:"warden-dash",component:WardenDashComponent},
-  {path:"warden-side",component:WardenSideComponent}
+  {path:"warden-side",component:WardenSideComponent},
+  {path:"users",component:UsersComponent}
  
 ];
 
