@@ -27,6 +27,11 @@
                 <form class="was-validated" (ngSubmit)="onSubmit()" #complainForm="ngForm">
 
                     <div class="mb-3">
+                        <label for="validationTextarea" class="form-label"><b>Scan the QR Code: </b></label>
+                        <zxing-scanner #scanner [formats]="allowedFormats" (camerasFound)="onCamerasFound($event)" (scanSuccess)="onCodeScanned($event)"></zxing-scanner>
+                    </div>
+
+                    <div class="mb-3">
                         <label for="validationTextarea" class="form-label"><b>Attach a Image of the Damaged or Broken Property: </b></label>
                         <input type="file" class="form-control" id="fileInput" aria-label="file example" required (change)="onFileSelected($event)">
                     </div>
@@ -66,15 +71,12 @@
                     <div class="mb-3">
                         <button class="btn btn-primary" type="submit">Submit the Complaint</button>
                     </div>
+
                 </form>
                 <div class="alert alert-success" *ngIf="showMessage">{{successMessage}}</div>
             </div>
-    
-              
         </div>
     </div>
-
-    
-
 </body>
 </html>
+                       
