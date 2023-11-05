@@ -27,6 +27,8 @@ import { SubWardenSideComponent } from './sub-warden-side/sub-warden-side.compon
 import { WardenDashComponent } from './warden-dash/warden-dash.component';
 import { WardenSideComponent } from './warden-side/warden-side.component';
 import { UsersComponent } from './users/users.component';
+import { ComplainFilterComponent } from './complain-filter/complain-filter.component';
+import { RoomMatesComponent } from './room-mates/room-mates.component';
 
 
 
@@ -59,7 +61,9 @@ const routes: Routes = [
   {path:"sub-warden-side",component:SubWardenSideComponent},
   {path:"warden-dash",component:WardenDashComponent},
   {path:"warden-side",component:WardenSideComponent},
-  {path:"users",component:UsersComponent}
+  {path:"users",component:UsersComponent},
+  {path:"complain-filter",component:ComplainFilterComponent},
+  {path:"room-mates",component:RoomMatesComponent}
  
 ];
 

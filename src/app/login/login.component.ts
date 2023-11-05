@@ -36,6 +36,15 @@ export class LoginComponent {
                 case 'STUDENT':
                   this.router.navigate(['/student-dash']);
                   break;
+                case 'SUB_WARDEN':
+                  this.router.navigate(['/sub-warden-dash']);
+                  break;
+                case 'ACADEMIC_WARDEN':
+                  this.router.navigate(['/warden-dash']);
+                  break;
+                case 'DEAN':
+                    this.router.navigate(['/dean-dash']);
+                    break;
                 default:
                   this.router.navigate(['/']);
                   break;

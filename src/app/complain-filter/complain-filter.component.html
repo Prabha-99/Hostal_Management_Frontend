@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title> 
+  <style>
+    /* Add some CSS styling for the table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+    <app-nav-bar></app-nav-bar>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <!-- Assuming app-admin-side is your Angular component for the admin side -->
+                <app-admin-side></app-admin-side>
+            </div>
+            <div class="col-10">
+                <br><br><br><br>
+                <br><br>
+                <div>
+                    <h1>Accepted Complain</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Complain ID</th>
+                                <th>Complain Type</th>
+                                <th>Drescription</th>
+                                <th>Property ID</th>
+                                <th>Created Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Iterate over students array from your Angular component -->
+                            <tr *ngFor="let acc of accepted.slice(startIndexAccepted, startIndexAccepted + itemsPerPage)">
+                                <td>{{ acc.cid }}</td>
+                                <td>{{ acc.c_type }}</td>
+                                <td>{{ acc.description }}</td>
+                                <td>{{ acc.propid }}</td>
+                                <td>{{ acc.created_at }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                          <li class="page-item" [class.disabled]="currentPageAccepted === 1">
+                            <a class="page-link" (click)="previousPageAccepted()">Previous</a>
+                          </li>
+                          <li class="page-item" *ngFor="let page of pagesAccepted" [class.active]="currentPageAccepted === page">
+                            <a class="page-link" (click)="goToPageAccepted(page)">{{ page }}</a>
+                          </li>
+                          <li class="page-item" [class.disabled]="currentPageAccepted === totalPagesAccepted">
+                            <a class="page-link" (click)="nextPageAccepted()">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    <br><br>
+                </div>
+
+                <div>
+                    <h1>Not Accepted Complain</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Complain ID</th>
+                                <th>Complain Type</th>
+                                <th>Drescription</th>
+                                <th>Property ID</th>
+                                <th>Created Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Iterate over staffs array from your Angular component -->
+                            <tr *ngFor="let nul of nulls.slice(startIndexNull, startIndexNull + itemsPerPage)">
+                                <td>{{ nul.cid }}</td>
+                                <td>{{ nul.c_type }}</td>
+                                <td>{{ nul.description }}</td>
+                                <td>{{ nul.propid }}</td>
+                                <td>{{ nul.created_at }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                          <li class="page-item" [class.disabled]="currentPageAccepted === 1">
+                            <a class="page-link" (click)="previousPageAccepted()">Previous</a>
+                          </li>
+                          <li class="page-item" *ngFor="let page of pagesAccepted" [class.active]="currentPageAccepted === page">
+                            <a class="page-link" (click)="goToPageAccepted(page)">{{ page }}</a>
+                          </li>
+                          <li class="page-item" [class.disabled]="currentPageAccepted === totalPagesAccepted">
+                            <a class="page-link" (click)="nextPageAccepted()">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add your JavaScript or Angular scripts here if needed -->
+
+</body>
+</html>

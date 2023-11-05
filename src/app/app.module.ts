@@ -34,6 +34,8 @@ import { DeanSideComponent } from './dean-side/dean-side.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { UsersComponent } from './users/users.component';
+import { ComplainFilterComponent } from './complain-filter/complain-filter.component';
+import { RoomMatesComponent } from './room-mates/room-mates.component';
 
 
 
@@ -64,7 +66,9 @@ import { UsersComponent } from './users/users.component';
     SubWardenSideComponent,
     WardenSideComponent,
     DeanSideComponent,
-    UsersComponent
+    UsersComponent,
+    ComplainFilterComponent,
+    RoomMatesComponent
 
 
   ],
