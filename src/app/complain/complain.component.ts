@@ -26,7 +26,7 @@ export class ComplainComponent {
   reg_no: string | undefined;
 
   complainData: any = {
-    cType: 'Broken Property', // Initialize with the default value
+    cType: '', // Initialize with the default value
     description: '',
   };
 
@@ -87,6 +87,7 @@ export class ComplainComponent {
   submitComplaint() {
     this.complainService.submitComplain(this.complainData).subscribe(
       (response) => {
+        console.log(response.reg_no);
         this.successMessage = 'Complaint submitted successfully!';
         this.showMessage = true; // Show the message
         this.resetForm(); // Reset the form after successful submission
