@@ -35,6 +35,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { UsersComponent } from './users/users.component';
 import { ComplainFilterComponent } from './complain-filter/complain-filter.component';
+import { RoomMatesComponent } from './room-mates/room-mates.component';
 
 
 
@@ -66,7 +67,8 @@ import { ComplainFilterComponent } from './complain-filter/complain-filter.compo
     WardenSideComponent,
     DeanSideComponent,
     UsersComponent,
-    ComplainFilterComponent
+    ComplainFilterComponent,
+    RoomMatesComponent
 
 
   ],

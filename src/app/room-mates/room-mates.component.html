@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title> 
+  <style>
+    /* Add some CSS styling for the table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+    <app-nav-bar></app-nav-bar>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <!-- Assuming app-admin-side is your Angular component for the admin side -->
+                <app-admin-side></app-admin-side>
+            </div>
+            <div class="col-10">
+                <br><br><br><br>
+                <br><br>
+                <h2>Users</h2>
+
+                <div class="form-group">
+                    <label for="roomNumber">Room Number:</label>
+                    <input type="text" id="roomNumber" class="form-control" [(ngModel)]="inputRoom">
+                    <br>
+                    <button class="btn btn-primary" (click)="getUsersByRoom()">Get Users</button>
+                </div>
+
+                    <br>
+
+                    <div *ngIf="users.length > 0">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th>Email</th>
+                              <th>Role</th>
+                              <th>Registration Number</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let user of users">
+                              <td>{{ user.firstname }}</td>
+                              <td>{{ user.lastname }}</td>
+                              <td>{{ user.email }}</td>
+                              <td>{{ user.role }}</td>
+                              <td>{{ user.reg_no }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                    <div *ngIf="users.length === 0">
+                    <p>No users found.</p>
+                    </div>
+                  
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Add your JavaScript or Angular scripts here if needed -->
+
+</body>
+</html>
