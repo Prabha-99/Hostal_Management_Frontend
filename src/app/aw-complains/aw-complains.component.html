@@ -39,10 +39,10 @@
                             <td>{{ file.cid }}</td>
                             <td>{{ file.reg_no }}</td>
                             <td>{{ file.room }}</td>
-                            <td>{{ file.c_type }}</td>
+                            <td class="damaged" [ngStyle]="{ 'color': getTextColor(file.cType) }">{{ file.cType }}</td>
                             <td>{{ file.description}}</td>
                             <td>
-                                <button type="button" class="btn btn-outline-dark" (click)="downloadFile(file.report_id, file.report_name)">Download Image File</button>
+                                <button type="button" class="btn btn-outline-dark" (click)="downloadFile(file.cid)">Download Image File</button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-outline-success" (click)="acceptComplaint(file); reloadPage()">Accept</button>

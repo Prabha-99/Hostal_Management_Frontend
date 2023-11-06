@@ -11,7 +11,6 @@ import { RegistrationComponent } from './registration/registration.component';
 import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
 import { ChangRoomComponent } from './chang-room/chang-room.component';
 import { RoomsComponent } from './rooms/rooms.component'; 
-import { QRCodeComponent } from './qrcode/qrcode.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComplainComponent } from './complain/complain.component'; 
 import { FormsModule } from '@angular/forms';
@@ -21,7 +20,6 @@ import { AwComplainsComponent } from './aw-complains/aw-complains.component';
 import { DeanComplainsComponent } from './dean-complains/dean-complains.component';
 import { StudentSideBarComponent } from './student-side-bar/student-side-bar.component';
 import { MyComplainsComponent } from './my-complains/my-complains.component';
-
 import { ItemsComponent } from './items/items.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SubWardenDashComponent } from './sub-warden-dash/sub-warden-dash.component';
@@ -30,13 +28,14 @@ import { DeanDashComponent } from './dean-dash/dean-dash.component';
 import { SubWardenSideComponent } from './sub-warden-side/sub-warden-side.component';
 import { WardenSideComponent } from './warden-side/warden-side.component';
 import { DeanSideComponent } from './dean-side/dean-side.component';
-
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { UsersComponent } from './users/users.component';
 import { ComplainFilterComponent } from './complain-filter/complain-filter.component';
 import { RoomMatesComponent } from './room-mates/room-mates.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 import { FindPropertyComponent } from './find-property/find-property.component';
+
 
 
 
@@ -52,7 +51,6 @@ import { FindPropertyComponent } from './find-property/find-property.component';
     StaffRegistrationComponent,
     ChangRoomComponent,
     RoomsComponent,
-    QRCodeComponent,
     ComplainComponent,
     ComplainComponent,
     SwComplainsComponent,
@@ -70,8 +68,8 @@ import { FindPropertyComponent } from './find-property/find-property.component';
     UsersComponent,
     ComplainFilterComponent,
     RoomMatesComponent,
+    NotfoundComponent,
     FindPropertyComponent
-
 
   ],
   imports: [

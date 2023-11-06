@@ -90,4 +90,17 @@ export class SwComplainsComponent implements OnInit {
       }
     );
   }
+
+  getTextColor(complainType: string): string {
+    switch (complainType) {
+      case 'Broken Property':
+        return 'rgb(255, 82, 2)'; 
+      case 'Damaged Property':
+        return 'rgb(255, 166, 0)'; 
+      case 'Missing Item':
+        return 'rgb(197, 23, 0)'; 
+      default:
+        return 'black'; 
+    }
+  }
 }

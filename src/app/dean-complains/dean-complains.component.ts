@@ -79,4 +79,33 @@ export class DeanComplainsComponent {
       });
   }
 
+  acceptComplaint(file: any) {
+    const updatedComplaint = { ...file, status: 'Accepted' };
+  
+    // Include the updated complaint as the request body
+    this.deanComplainsService.updateComplaintStatus(updatedComplaint).subscribe(
+      () => {
+        console.log('Complaint status updated successfully.');
+        // Update the local status in the component's files array
+        file.status = 'Accepted';
+      },
+      (error) => {
+        console.error('Error accepting complaint:', error);
+      }
+    );
+  }
+
+  getTextColor(complainType: string): string {
+    switch (complainType) {
+      case 'Broken Property':
+        return 'rgb(255, 82, 2)'; 
+      case 'Damaged Property':
+        return 'rgb(255, 166, 0)'; 
+      case 'Missing Item':
+        return 'rgb(197, 23, 0)'; 
+      default:
+        return 'black'; 
+    }
+  }
+
 }
