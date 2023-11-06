@@ -12,7 +12,6 @@ import { RegistrationComponent } from './registration/registration.component';
 import { StaffRegistrationComponent } from './staff-registration/staff-registration.component';
 import { ChangRoomComponent } from './chang-room/chang-room.component';
 import { RoomsComponent } from './rooms/rooms.component';
-import { QRCodeComponent } from './qrcode/qrcode.component';
 import { ComplainComponent } from './complain/complain.component';
 import { SwComplainsComponent } from './sw-complains/sw-complains.component';
 import { AwComplainsComponent } from './aw-complains/aw-complains.component';
@@ -29,6 +28,9 @@ import { WardenSideComponent } from './warden-side/warden-side.component';
 import { UsersComponent } from './users/users.component';
 import { ComplainFilterComponent } from './complain-filter/complain-filter.component';
 import { RoomMatesComponent } from './room-mates/room-mates.component';
+import { AuthGuardService } from './Service/auth-guard.service';
+import { RouteResolverService } from './Service/route-resolver.service';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 
@@ -37,33 +39,32 @@ import { RoomMatesComponent } from './room-mates/room-mates.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
-  {path:"admin-dash",component:AdminDashComponent},
-  {path:"student-dash",component:StudentDashComponent},
-  {path:"nav-bar",component:NavBarComponent},
-  {path:"admin-side",component:AdminSideComponent},
-  {path:"registration",component:RegistrationComponent},
-  {path:"staff-registration",component:StaffRegistrationComponent},
-  {path:"change-room",component:ChangRoomComponent},
-  {path:"rooms",component:RoomsComponent},
-  {path:"qrcode",component:QRCodeComponent},
-  {path:"complain",component:ComplainComponent},
-  {path:"complain",component:ComplainComponent},
-  {path:"sw-complains",component:SwComplainsComponent},
-  {path:"aw-complains",component:AwComplainsComponent},
-  {path:"student-side-bar",component:StudentSideBarComponent},
-  {path:"dean-complains",component:DeanComplainsComponent},
-  {path:"my-complains",component:MyComplainsComponent},
-  {path:"items",component:ItemsComponent},
-  {path:"dean-complains",component:DeanComplainsComponent},
-  {path:"dean-dash",component:DeanDashComponent},
-  {path:"dean-side",component:DeanSideComponent},
-  {path:"sub-warden-dash",component:SubWardenDashComponent},
-  {path:"sub-warden-side",component:SubWardenSideComponent},
-  {path:"warden-dash",component:WardenDashComponent},
-  {path:"warden-side",component:WardenSideComponent},
-  {path:"users",component:UsersComponent},
-  {path:"complain-filter",component:ComplainFilterComponent},
-  {path:"room-mates",component:RoomMatesComponent}
+  {path:"admin-dash",component:AdminDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"student-dash",component:StudentDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STUDENT'] },resolve: { userRole: RouteResolverService }},
+  {path:"nav-bar",component:NavBarComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['DEAN','ADMIN','ACADEMIC_WARDEN','SUB_WARDEN','STUDENT'] },resolve: { userRole: RouteResolverService }},
+  {path:"admin-side",component:AdminSideComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"registration",component:RegistrationComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"staff-registration",component:StaffRegistrationComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"change-room",component:ChangRoomComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"rooms",component:RoomsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"complain",component:ComplainComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STUDENT'] },resolve: { userRole: RouteResolverService }},
+  {path:"sw-complains",component:SwComplainsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['SUB_WARDEN'] },resolve: { userRole: RouteResolverService }},
+  {path:"aw-complains",component:AwComplainsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ACADEMIC_WARDEN'] },resolve: { userRole: RouteResolverService }},
+  {path:"student-side-bar",component:StudentSideBarComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STUDENT'] },resolve: { userRole: RouteResolverService }},
+  {path:"dean-complains",component:DeanComplainsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['DEAN'] },resolve: { userRole: RouteResolverService }},
+  {path:"my-complains",component:MyComplainsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['STUDENT'] },resolve: { userRole: RouteResolverService }},
+  {path:"items",component:ItemsComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"dean-dash",component:DeanDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['DEAN'] },resolve: { userRole: RouteResolverService }},
+  {path:"dean-side",component:DeanSideComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['DEAN'] },resolve: { userRole: RouteResolverService }},
+  {path:"sub-warden-dash",component:SubWardenDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['SUB_WARDEN'] },resolve: { userRole: RouteResolverService }},
+  {path:"sub-warden-side",component:SubWardenSideComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['SUB_WARDEN'] },resolve: { userRole: RouteResolverService }},
+  {path:"warden-dash",component:WardenDashComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ACADEMIC_WARDEN'] },resolve: { userRole: RouteResolverService }},
+  {path:"warden-side",component:WardenSideComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ACADEMIC_WARDEN'] },resolve: { userRole: RouteResolverService }},
+  {path:"users",component:UsersComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"complain-filter",component:ComplainFilterComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"room-mates",component:RoomMatesComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
+  {path:"notfound",component:NotfoundComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['DEAN','ADMIN','ACADEMIC_WARDEN','SUB_WARDEN','STUDENT'] },resolve: { userRole: RouteResolverService }}
+
  
 ];
 
