@@ -29,6 +29,7 @@ import { WardenSideComponent } from './warden-side/warden-side.component';
 import { UsersComponent } from './users/users.component';
 import { ComplainFilterComponent } from './complain-filter/complain-filter.component';
 import { RoomMatesComponent } from './room-mates/room-mates.component';
+import { FindPropertyComponent } from './find-property/find-property.component';
 
 
 
@@ -63,7 +64,8 @@ const routes: Routes = [
   {path:"warden-side",component:WardenSideComponent},
   {path:"users",component:UsersComponent},
   {path:"complain-filter",component:ComplainFilterComponent},
-  {path:"room-mates",component:RoomMatesComponent}
+  {path:"room-mates",component:RoomMatesComponent},
+  {path:"find-property",component:FindPropertyComponent}
  
 ];
 
