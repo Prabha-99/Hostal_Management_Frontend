@@ -33,24 +33,44 @@ export class MyComplainsComponent {
   }
 
 
-  ngOnInit(): void {
+  // ngOnInit(): void {
 
-    this.myComplainsService.getAllFiles().subscribe(
-      (response) => {
-        this.files = response;
-        this.originalFiles = response; // Assign the fetched files to originalFiles
-      },
-      (error) => {
-        console.log('Error retrieving files:', error);
-      }
-    );
+  //   this.myComplainsService.getAllFiles().subscribe(
+  //     (response) => {
+  //       this.files = response;
+  //       this.originalFiles = response; // Assign the fetched files to originalFiles
+  //     },
+  //     (error) => {
+  //       console.log('Error retrieving files:', error);
+  //     }
+  //   );
+
+  //   this.loginService.getUserInfo().subscribe(user => {
+  //     this.reg_no = user.reg_no;
+      
+  //   });
+
+  // }
+
+  ngOnInit(): void {
 
     this.loginService.getUserInfo().subscribe(user => {
       this.reg_no = user.reg_no;
-      
     });
-
+  
+    this.myComplainsService.getAllFiles().subscribe(
+      (response) => {
+        this.originalFiles = response; // Store all complaints
+  
+        // Filter complaints submitted by the logged-in user
+        this.files = this.originalFiles.filter(complaint => complaint.reg_no === this.reg_no);
+      },
+      (error) => {
+        console.log('Error retrieving all complaints:', error);
+      }
+    );
   }
+  
 
 
   downloadFile(report_id: number, report_name: string) {
