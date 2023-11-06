@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Items } from '../items';
+import { Property } from '../property';
 
 
 @Injectable({
@@ -19,5 +20,10 @@ export class ItemsService {
   getAllItems(): Observable<Items[]> {
     return this.http.get<Items[]>(`${this.apiUrl}/all`);
   }
+  getRoomsProperty(inputRoom: Number): Observable<Property[]> {
+    const params = new HttpParams().set('inputRoom', inputRoom.toString());
+    return this.http.get<Property[]>(`${this.apiUrl}/property`, { params });
+}
+
 
 }

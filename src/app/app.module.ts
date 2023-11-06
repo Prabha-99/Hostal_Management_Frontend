@@ -36,6 +36,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { UsersComponent } from './users/users.component';
 import { ComplainFilterComponent } from './complain-filter/complain-filter.component';
 import { RoomMatesComponent } from './room-mates/room-mates.component';
+import { FindPropertyComponent } from './find-property/find-property.component';
 
 
 
@@ -68,7 +69,8 @@ import { RoomMatesComponent } from './room-mates/room-mates.component';
     DeanSideComponent,
     UsersComponent,
     ComplainFilterComponent,
-    RoomMatesComponent
+    RoomMatesComponent,
+    FindPropertyComponent
 
 
   ],
