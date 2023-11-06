@@ -34,6 +34,8 @@ import { UsersComponent } from './users/users.component';
 import { ComplainFilterComponent } from './complain-filter/complain-filter.component';
 import { RoomMatesComponent } from './room-mates/room-mates.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { FindPropertyComponent } from './find-property/find-property.component';
+
 
 
 
@@ -66,8 +68,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     UsersComponent,
     ComplainFilterComponent,
     RoomMatesComponent,
-    NotfoundComponent
-
+    NotfoundComponent,
+    FindPropertyComponent
 
   ],
   imports: [

@@ -31,6 +31,8 @@ import { RoomMatesComponent } from './room-mates/room-mates.component';
 import { AuthGuardService } from './Service/auth-guard.service';
 import { RouteResolverService } from './Service/route-resolver.service';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { FindPropertyComponent } from './find-property/find-property.component';
+
 
 
 
@@ -63,7 +65,8 @@ const routes: Routes = [
   {path:"users",component:UsersComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"complain-filter",component:ComplainFilterComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
   {path:"room-mates",component:RoomMatesComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }},
-  {path:"notfound",component:NotfoundComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['DEAN','ADMIN','ACADEMIC_WARDEN','SUB_WARDEN','STUDENT'] },resolve: { userRole: RouteResolverService }}
+  {path:"notfound",component:NotfoundComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['DEAN','ADMIN','ACADEMIC_WARDEN','SUB_WARDEN','STUDENT'] },resolve: { userRole: RouteResolverService }},
+  {path:"find-property",component:FindPropertyComponent, canActivate: [AuthGuardService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouteResolverService }}
 
  
 ];
