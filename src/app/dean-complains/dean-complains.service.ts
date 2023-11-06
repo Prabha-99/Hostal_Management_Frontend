@@ -16,4 +16,8 @@ export class DeanComplainsService {
     return this.http.get(this.baseUrl);
   }
 
+  updateComplaintStatus(complaint: any): Observable<any> {
+    return this.http.put(`${this.baseUrl2}/updateStatus`, complaint);
+  }
+
 }
